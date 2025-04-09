@@ -291,7 +291,7 @@ function makeMIDIKeyboard(device) {
 
     mdiv.removeChild(document.getElementById("no-midi-label"));
 
-    const midiNotes = [49, 52, 56, 63];
+    const midiNotes = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     midiNotes.forEach(note => {
         const key = document.createElement("div");
         const label = document.createElement("p");
@@ -305,12 +305,7 @@ function makeMIDIKeyboard(device) {
                 144 + midiChannel, // Code for a note on: 10010000 & midi channel (0-15)
                 note, // MIDI Note
                 100 // MIDI Velocity
-            ];
-        
-            let noteOffMessage = [
-                128 + midiChannel, // Code for a note off: 10000000 & midi channel (0-15)
-                note, // MIDI Note
-                0 // MIDI Velocity
+            
             ];
         
             // Including rnbo.min.js (or the unminified rnbo.js) will add the RNBO object
